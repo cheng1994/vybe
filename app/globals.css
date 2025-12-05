@@ -1,26 +1,57 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #0e0f0e;
+	--foreground: #ededed;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+    --color-vybe-green-50: oklch(0.96 0.043 144.14);
+    --color-vybe-green-100: oklch(0.91 0.11 143.87);
+    --color-vybe-green-200: oklch(0.837 0.153 143.15);
+    --color-vybe-green-300: oklch(0.761 0.139 143.03);
+    --color-vybe-green-400: oklch(0.686 0.126 143.18);
+    --color-vybe-green-500: oklch(0.618 0.113 143.06);
+    --color-vybe-green-600: oklch(0.542 0.099 143.27);
+    --color-vybe-green-700: oklch(0.466 0.086 143.11);
+    --color-vybe-green-800: oklch(0.391 0.072 143.46);
+    --color-vybe-green-900: oklch(0.322 0.059 143.31);
+    --color-vybe-green-950: oklch(0.283 0.052 143.17);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-left-clip-path {
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+}
+
+.bottom-right-clip-path {
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        0 100%
+    );
+
+    &:before {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 20px),
+            calc(100% - 20px) 100%,
+            0 100%
+        );
+    }
 }
