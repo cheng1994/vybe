@@ -39,11 +39,12 @@ export default function Home() {
                     className="bg-gray-500 border-0 before:top-px before:left-px before:w-[calc(100%-2px)] before:h-[calc(100%-2px)] before:absolute before:inset-0 before:bottom-right-clip-path bottom-right-clip-path p-6 md:p-8 lg:p-12 before:md:bg-radial-[at_50%_100%] before:bg-radial-[at_50%_80%] before:from-vybe-green-950 before:from-50% before:md:from-30% before:to-[#1A1A1A] before:to-80% before:md:to-50%"
                 >
                     {/* Step Cards */}
-                    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-stretch">
+                    <div className="flex flex-col min-[1000px]:flex-row gap-6 md:gap-8  justify-center flex-wrap min-[1000px]:items-stretch items-center">
                         {steps.map((step, index) => (
                             <React.Fragment key={step.number}>
-                                <div className="flex-1 flex">
+                                <div className="flex-1 flex min-[1000px]:max-w-1/3 sm:max-w-1/2">
                                     <StepCard
+                                        className="min-h-[450px]"
                                         number={step.number}
                                         title={step.title}
                                         highlightedWord={step.highlightedWord}
@@ -54,7 +55,7 @@ export default function Home() {
                                 {index < steps.length - 1 && (
                                     <>
                                         {/* Mobile: vertical arrow */}
-                                        <div className="flex justify-center md:hidden py-2">
+                                        <div className="flex justify-center min-[1000px]:hidden py-2">
                                             <img
                                                 className="z-10"
                                                 src="/arrow-down.svg"
@@ -62,7 +63,7 @@ export default function Home() {
                                             />
                                         </div>
                                         {/* Desktop: horizontal arrow */}
-                                        <div className="hidden md:flex items-center">
+                                        <div className="hidden min-[1000px]:flex items-center">
                                             <img
                                                 className="z-10"
                                                 src="/arrow-right.svg"

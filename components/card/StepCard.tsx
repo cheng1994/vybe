@@ -21,10 +21,10 @@ export default function StepCard({
     const titleParts = title.split(regex)
 
     return (
-        <Card variant="step" className={`p-3 ${className}`} showAccent={true}>
-            <div className="flex flex-col gap-5 h-full p-2 bg-[#DDE4C3]">
+        <Card variant="step" className="p-3" showAccent={true}>
+            <div className={`flex flex-col gap-5 h-full p-2 bg-[#DDE4C3] ${className}`}>
                 {/* Title */}
-                <h3 className="top-left-clip-path flex-col flex justify-center text-center p-10 text-2xl md:text-3xl font-bold text-white bg-black">
+                <h3 className="top-left-clip-path flex-col flex justify-center text-center p-10 text-4xl  font-medium text-white bg-black">
                     {titleParts.map((part, index) =>
                         part.toLowerCase() === highlightedWord.toLowerCase() ? (
                             <span key={index} className="text-vybe-green-200">
@@ -43,7 +43,7 @@ export default function StepCard({
 
                     {/* Number indicator */}
                     <div className="mt-auto self-end w-10 h-10 md:w-12 md:h-12 rounded-lg border-2 bg-vybe-green-100 border-black flex items-center justify-center">
-                        <span className="text-black font-bold text-lg md:text-xl">
+                        <span className="font-pp-neue-machina text-black font-bold text-lg md:text-xl">
                             {number}
                         </span>
                     </div>
